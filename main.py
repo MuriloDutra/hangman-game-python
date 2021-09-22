@@ -3,12 +3,12 @@ def play():
     print("Welcome to the hangman game")
     print("***************************")
 
-    secret_word = "banana"
+    secret_word = "banana".strip().lower()
     hanged = False
     user_won = False
 
     while(not hanged and not user_won):
-        user_attempt = input("Type a letter: ")
+        user_attempt = input("Type a letter: ").strip().lower()
         index = 0
 
         for letter in secret_word:
