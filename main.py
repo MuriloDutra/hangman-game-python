@@ -6,15 +6,19 @@ def play():
     secret_word = "banana".strip().lower()
     hanged = False
     user_won = False
+    hitted_letters = ["_", "_", "_", "_", "_", "_"]
 
+    print()
+    print(hitted_letters)
     while(not hanged and not user_won):
         user_attempt = input("Type a letter: ").strip().lower()
         index = 0
 
         for letter in secret_word:
             if(letter == user_attempt):
-                print(f"Found the letter {user_attempt} in the position {index} ")
+                hitted_letters[index] = letter
             index = index + 1
+        print(hitted_letters)
 
 if __name__ == '__main__':
     play()
