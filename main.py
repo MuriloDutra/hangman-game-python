@@ -1,9 +1,19 @@
+import random
+
 def play():
     print("***************************")
     print("Welcome to the hangman game")
     print("***************************")
 
-    secret_word = "banana".strip().upper()
+    words_list = []
+    with open("words.txt", "r") as file:#If some error happens or not, the file.close() will be called automatically
+        for line in file:
+            line = line.strip()#It removes "\n"
+            words_list.append(line)
+        file.close()
+
+    word_position = random.randrange(0, len(words_list))
+    secret_word = words_list[word_position].strip().upper()
     hanged = False
     user_won = False
     errors = 0
