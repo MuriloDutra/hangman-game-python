@@ -7,7 +7,7 @@ def play():
     hanged = False
     user_won = False
     errors = 0
-    hitted_letters = ["_", "_", "_", "_", "_", "_"]
+    hitted_letters = ["_" for letter in secret_word]#Filling the list with "_"
 
     print()
     print(hitted_letters)
